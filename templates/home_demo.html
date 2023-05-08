@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial headline sentiment analysis</title>
+</head>
+
+<body>
+    <form method="post">
+        <p>Please enter statement</p>
+        <input type="text" name="statement" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if sentence %}
+    <p> {{sentence}} </p>
+    <p> {{result}} </p>
+    {% endif %}
+</body>
+
+</html>
