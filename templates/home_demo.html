@@ -8,6 +8,18 @@
     <title>Financial headline sentiment analysis</title>
 </head>
 
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+</style>
+
 <body>
     <form method="post">
         <p>Please enter statement</p>
@@ -18,6 +30,20 @@
     {% if sentence %}
     <p> {{sentence}} </p>
     <p> {{result}} </p>
+    {% endif %}
+
+    <form method="post">
+        <button name="generate" type="submit" value="generate">generate</button>
+    </form>
+    {% if headline_dict %}
+    {% for stories in headline_dict %}
+    <table>
+        <TR>
+            <TD>{{stories.headline}}</TD>
+            <TD>{{stories.value}}</TD>
+        </TR>
+    </table>
+    {% endfor %}
     {% endif %}
 </body>
 
